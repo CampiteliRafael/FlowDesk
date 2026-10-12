@@ -70,8 +70,6 @@ npm run test:e2e
 - A API e local ao projeto: nao ha banco de dados, autenticacao real, persistencia duravel ou envio dos dados a servicos externos.
 - O controle **Simular falha de API** provoca erros 503 nos pedidos da interface; desative-o e tente novamente para verificar a recuperacao dos estados de erro.
 
-Veja [PROJECT_SPEC_FlowDesk.md](./PROJECT_SPEC_FlowDesk.md) para os requisitos, criterios de aceite e fases do projeto.
-
 ## Limites conhecidos
 
 - Login e identidade sao apenas demonstrativos e nao protegem as rotas.
