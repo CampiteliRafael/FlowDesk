@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --background: #f6f7fb;
+  --foreground: #172033;
+  --surface: #ffffff;
+  --surface-subtle: #f8f9fc;
+  --border: #e7e9f0;
+  --muted: #737c90;
+  --primary: #5b55e7;
+  --primary-strong: #4841d3;
+  --primary-soft: #f0efff;
+  --success: #16866a;
+  --warning: #b77718;
+  --danger: #c44455;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-soft: var(--primary-soft);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--background);
+}
+
+body {
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #dddcff;
+  color: #24205f;
+}
+
+:focus-visible {
+  outline: 3px solid #aaa7ff;
+  outline-offset: 3px;
+}
+
+.surface-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 2px 8px rgb(32 42 72 / 3%);
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.control {
+  min-height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--foreground);
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.control:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(91 85 231 / 14%);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.72rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.status-badge::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+.status-open {
+  background: #fff4e8;
+  color: #ae6811;
+}
+
+.status-in_progress {
+  background: #eef1ff;
+  color: #5555c4;
+}
+
+.status-blocked {
+  background: #fff0f1;
+  color: #b43c4e;
+}
+
+.status-resolved {
+  background: #eaf7f1;
+  color: #177454;
+}
+
+.priority-urgent,
+.priority-high {
+  color: #bd4958;
+}
+
+.priority-medium {
+  color: #ab751d;
+}
+
+.priority-low {
+  color: #68748a;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
